@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<!--
+	Strongly Typed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Strongly Typed by HTML5 UP</title>
+    </head>
+
+    <body>
+
+        <div id = "sviKorisnici"></div>
+
+        <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                var sviKorisnici = JSON.parse(this.responseText);
+                console.log(sviKorisnici[0].korisnickoIme);
+                }
+            };
+            xhttp.open("GET", "http://localhost:3000/dajSveKorisnike", true);
+            xhttp.send();
+        </script>
+    </body>
+    
+</html>
